@@ -15,9 +15,9 @@ const enableDark = () => {
 };
 
 const disableDark = () => {
-	document.body.classList.remove('darktheme');
-	localStorage.setItem('darkTheme', null);
-	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="moon"></i>`;
+	document.body.classList.add('darktheme');
+	localStorage.setItem('darkTheme', 'enabled');
+	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="sun"></i>`;
 	lucide.createIcons();
 };
 
@@ -26,7 +26,7 @@ if (darkTheme === 'enabled') {
 	enableDark();
 	document.body.classList.remove('notransition');
 } else {
-	disableDark();
+	enableDark();
 }
 
 themeToggle.addEventListener('click', () => {
@@ -34,7 +34,7 @@ themeToggle.addEventListener('click', () => {
 	if (darkTheme !== 'enabled') {
 		enableDark();
 	} else {
-		disableDark();
+		enableDark();
 	}
 });
 
@@ -46,7 +46,7 @@ if (CONFIG.changeThemeByOS && CONFIG.autoChangeTheme) {
 	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		enableDark();
 	} else {
-		disableDark();
+		enableDark();
 	}
 }
 
@@ -58,6 +58,6 @@ if (CONFIG.changeThemeByHour && CONFIG.autoChangeTheme && !CONFIG.changeThemeByO
 	if (currentTime >= CONFIG.hourDarkThemeActive) {
 		enableDark();
 	} else if (currentTime >= CONFIG.hourDarkThemeInactive) {
-		disableDark();
+		enableDark();
 	}
 }
