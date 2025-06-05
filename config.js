@@ -52,13 +52,13 @@ const CONFIG = {
 	firstButtonsContainer: [
 		{
 			id: '1',
-			name: 'Github',
-			icon: 'github',
-			link: 'https://github.com/',
+			name: 'Deepseek',
+			icon: 'bot-message-square',
+			link: 'https://chat.deepseek.com/',
 		},
 		{
 			id: '2',
-			name: 'Mail',
+			name: 'Gmail',
 			icon: 'mail',
 			link: 'https://gmail.com/',
 		},
